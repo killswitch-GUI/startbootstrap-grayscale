@@ -39,15 +39,16 @@ p {
   }
 }
 a {
-  color: #42DCA3;
+  color: #0c9443;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
+#0c9443
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #1d9b6c;
+  color: #0c9443;
 }
 .light {
   font-weight: 400;
@@ -269,16 +270,16 @@ a:focus {
   border-radius: 0;
 }
 .btn-default {
-  border: 1px solid #42DCA3;
-  color: #42DCA3;
+  border: 1px solid #0c9443;
+  color: #0c9443;
   background-color: transparent;
 }
 .btn-default:hover,
 .btn-default:focus {
-  border: 1px solid #42DCA3;
+  border: 1px solid #0c9443;
   outline: none;
   color: black;
-  background-color: #42DCA3;
+  background-color: #0c9443;
 }
 ul.banner-social-buttons {
   margin-top: 0;
