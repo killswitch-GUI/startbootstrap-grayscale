@@ -1,0 +1,724 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc {
+  color: #d28445;
+}
+.highlight .kt {
+  color: #d28445;
+}
+.highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si {
+  color: #8f5536;
+}
+.highlight .se {
+  color: #8f5536;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+
+<p>Welcome to the SimplyEmail API! You can use our API to access SimplyEmail API endpoints, which can get and search for emails on the web that have been scrapped. </p>
+
+<p>We have language bindings in Shell and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+
+<h1 id="simplyemail-authentication">SimplyEmail Authentication</h1>
+
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"api_endpoint_here"</span>
+  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre>
+
+<blockquote>
+<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
+</blockquote>
+
+<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+
+<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
+
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
+
+<h1 id="config">Config</h1>
+
+<h2 id="version">Version</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/version?token=447xadjtxla1elkbw9e6ojb5rd2ueaufm8r59kp7"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v1.4.2"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This API call gets the current version of the SimplyEmail endpoint.
+Authetication is required for even a version request.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://example.com/api/version?token=447xadjtxla1elkbw9e6ojb5rd2ueaufm8r59kp7</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Token</td>
+<td></td>
+<td>True</td>
+<td>Required for auth</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember — authentication is required for all calls!
+</aside>
+
+<h1 id="reporting">Reporting</h1>
+
+<h2 id="all-reporting">All Reporting</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"curl https://0.0.0.0:1337/api/reporting?
+token=447xadjtxla1elkbw9e6ojb5rd2ueaufm8r59kp7"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"reports"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"emails_domain"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"emails_found"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"emails_unique"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:33"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"modules_enabled_key"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"search_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2072016113418</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:18"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example1.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"emails_domain"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"emails_found"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"emails_unique"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:35:11"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"modules_enabled_key"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"search_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2072016113454</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:54"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This API call returns all the search reports conducted in the DB.
+This will allow corelation to emails obtained during a search via search_id. </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://0.0.0.0:1337/api/reporting</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Token</td>
+<td></td>
+<td>True</td>
+<td>Required for auth</td>
+</tr>
+</tbody></table>
+
+<h2 id="domain-search">Domain Search</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"curl https://0.0.0.0:1337/api/reporting/domain/
+example.com?token=447xadjtxla1elkbw9e6ojb5rd2ueaufm8r59kp7"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"reports"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"emails_domain"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"emails_found"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"emails_unique"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:33"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"modules_enabled_key"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"search_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2072016113418</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:18"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"emails_domain"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"emails_found"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"emails_unique"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:35:11"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"modules_enabled_key"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"search_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2072016113454</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:54"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This API call returns all the search reports conducted in the DB
+related to the supplied domain.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://0.0.0.0:1337/api/reporting/domain/&lt;DOMAIN&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Token</td>
+<td></td>
+<td>True</td>
+<td>Required for auth</td>
+</tr>
+<tr>
+<td>Domain</td>
+<td></td>
+<td>True</td>
+<td>Domain name to search reports for.</td>
+</tr>
+</tbody></table>
+
+<h1 id="domains">Domains</h1>
+
+<h2 id="all-domains">All Domains</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"curl https://0.0.0.0:1337/api/domain?
+token=447xadjtxla1elkbw9e6ojb5rd2ueaufm8r59kp7"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"domains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"allows_verification"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example1.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"instances_scraped"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"last_scrapped"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:18"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"webmail"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"allows_verification"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example2.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"instances_scraped"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"last_scrapped"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:54"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}{last}"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"webmail"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"allows_verification"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example3.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"instances_scraped"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"last_scrapped"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03/07/2016 00:48:26"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"webmail"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This API call returns all the search domains that
+have been searched. This supports building a 
+domain list.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://0.0.0.0:1337/api/domain</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Token</td>
+<td></td>
+<td>True</td>
+<td>Required for auth</td>
+</tr>
+</tbody></table>
+
+<h2 id="target-domain">Target Domain</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"curl https://0.0.0.0:1337/api/domain/example3.com
+?token=447xadjtxla1elkbw9e6ojb5rd2ueaufm8r59kp7"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"allows_verification"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example3.com"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"instances_scraped"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"last_scrapped"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:18"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"webmail"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This API call returns a specfic domain 
+supplied by user. This returns a JSON object
+with all the required doman info</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://0.0.0.0:1337/api/domain/example3.com</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Token</td>
+<td></td>
+<td>True</td>
+<td>Required for auth</td>
+</tr>
+<tr>
+<td>Domain</td>
+<td></td>
+<td>True</td>
+<td>The target domain requested</td>
+</tr>
+</tbody></table>
+
+<h1 id="emails">Emails</h1>
+
+<h2 id="all-emails">All Emails</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"curl https://0.0.0.0:1337/api/email?
+token=447xadjtxla1elkbw9e6ojb5rd2ueaufm8r59kp7"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"email_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@example.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"email_verified"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"first_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:33"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"instances_seen"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"last_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 20:41:40"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"name_generated_email"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"email_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fef@example.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"email_verified"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"first_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:33"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"instances_seen"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"last_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 20:41:40"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"name_generated_email"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"email_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dall@example.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"email_verified"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"first_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:33"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"instances_seen"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"last_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 20:41:40"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"name_generated_email"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This API call returns all the emails in the 
+db. This call is offten not public due to
+mlarge backends.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://0.0.0.0:1337/api/email</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Token</td>
+<td></td>
+<td>True</td>
+<td>Required for auth</td>
+</tr>
+</tbody></table>
+
+<h2 id="target-email">Target Email</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"curl https://0.0.0.0:1337/api/email/info@example.com?
+token=447xadjtxla1elkbw9e6ojb5rd2ueaufm8r59kp7"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"email_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@example.com"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"email_verified"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"first_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:33"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"instances_seen"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"last_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 20:41:40"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"name_generated_email"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This API call returns all the emails in the 
+db. This call is offten not public due to
+mlarge backends.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://0.0.0.0:1337/api/email/&lt;EMAIL@ADDR.COM&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Token</td>
+<td></td>
+<td>True</td>
+<td>Required for auth</td>
+</tr>
+<tr>
+<td>Email Address</td>
+<td></td>
+<td>True</td>
+<td>User supplied email to inspect</td>
+</tr>
+</tbody></table>
+
+<h1 id="search">Search</h1>
+
+<h2 id="doamin-email-search">Doamin Email Search</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"curl https://0.0.0.0:1337/api/search/example.com?
+token=447xadjtxla1elkbw9e6ojb5rd2ueaufm8r59kp7"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"allows_verification"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+  </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.com"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nt">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> 
+  </span><span class="nt">"emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"email_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@test.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"email_verified"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"first_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:33"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"instances_seen"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"last_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 20:41:40"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"name_generated_email"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"email_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fed@test.com"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"email_verified"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"first_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:33"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"instances_seen"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"last_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 20:41:40"</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"name_generated_email"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w"> 
+  </span><span class="nt">"instances_scraped"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+  </span><span class="nt">"last_scrapped"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/07/2016 11:34:18"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nt">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+  </span><span class="nt">"webmail"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This API call is the core functionality of SimplyEmail 
+CLI and what other paid services offer. This will allow API users to 
+quickly obtain the domain and email info for a supplied search.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://0.0.0.0:1337/api/search/&lt;DOMAIN&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Token</td>
+<td></td>
+<td>True</td>
+<td>Required for auth</td>
+</tr>
+<tr>
+<td>Domain</td>
+<td></td>
+<td>True</td>
+<td>Domain supplied for meta search</td>
+</tr>
+</tbody></table>
+
+          <h1 id="errors">Errors</h1>
+
+<aside class="notice">This section will provide errors for each API call that users should use during API programing.</aside>
+
+<p>The SimplyEmail API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request &ndash; Your request may be messed up?</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Your API key is wrong</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden &ndash; The API call requested is hidden for administrator / su tokens only</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; The specified call could not be found</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
+</tr>
+<tr>
+<td>410</td>
+<td>No data to return &ndash; The call did not return any data</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&rsquo;m a teapot</td>
+</tr>
+<tr>
+<td>490</td>
+<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>491</td>
+<td>Gone &ndash; The API call is not active on this endpoint.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
